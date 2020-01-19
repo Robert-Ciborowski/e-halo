@@ -1,5 +1,7 @@
 package com.example.ufthack.database;
 
+import com.example.ufthack.model.User;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -63,7 +65,7 @@ public class League {
     public class UserComparator implements Comparator<User> {
         @Override
         public int compare(User o1, User o2) {
-            return o1.score - o2.score;
+            return o1.getScore() - o2.getScore();
         }
     }
 }

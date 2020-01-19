@@ -20,7 +20,6 @@ import java.util.List;
 public class VapeViewActivity extends AppCompatActivity {
     private RecyclerView myrecyclerview;
     private List<VapeTime> vapeTimeList;
-    View v;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,20 +37,14 @@ public class VapeViewActivity extends AppCompatActivity {
         int day = Integer.parseInt(data[0]);
         int month = Integer.parseInt(data[1]);
         int year = Integer.parseInt(data[2]);
-    }
 
-    public VapeViewActivity(){
-
-    }
-
-    @Nullable
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        v = inflater.inflate(R.layout.fragment_notifications,container,false);
-        myrecyclerview = (RecyclerView)v.findViewById(R.id.contact_recyclerview);
+        myrecyclerview = (RecyclerView) findViewById(R.id.recyclerview2);
         VapeEventRecyclerViewAdapter recyclerViewAdapter2 = new VapeEventRecyclerViewAdapter(this.getApplicationContext(), vapeTimeList);
         myrecyclerview.setLayoutManager(new LinearLayoutManager(this));
         myrecyclerview.setAdapter(recyclerViewAdapter2);
-        return v;
+    }
+
+    public VapeViewActivity(){
 
     }
 }

@@ -15,6 +15,10 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 
 import com.example.ufthack.R;
+import com.example.ufthack.database.OnDataRetrieval;
+import com.example.ufthack.database.UserDatabaseAccessor;
+import com.example.ufthack.model.User;
+import com.example.ufthack.model.UserDatabase;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.snackbar.Snackbar;
@@ -24,12 +28,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.rengwuxian.materialedittext.MaterialEditText;
 
+import java.util.ArrayList;
+
 import dmax.dialog.SpotsDialog;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class MainActivity extends AppCompatActivity {
-
-
     Button btnSignIn, btnRegister;
     RelativeLayout rootLayout;
 
@@ -102,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
 
                 //Check Valid
                 if (TextUtils.isEmpty(edtEmail.getText().toString())) {
-                    Snackbar.make(rootLayout, "Please enter emial address", Snackbar.LENGTH_SHORT).show();
+                    Snackbar.make(rootLayout, "Please enter valid email address", Snackbar.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -124,9 +128,28 @@ public class MainActivity extends AppCompatActivity {
                 auth.signInWithEmailAndPassword(edtEmail.getText().toString(),edtPassword.getText().toString()).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                     @Override
                     public void onSuccess(AuthResult authResult) {
-                        waitingDialog.dismiss();
-                        startActivity(new Intent(MainActivity.this,Main2Activity.class));
-                        finish();
+                        UserDatabaseAccessor.getInstance().getAllUserIDs(new OnDataRetrieval<ArrayList<String>>() {
+                            @Override
+                            public void onRetrieval() {
+                                ArrayList<String> sdsdd = (ArrayList<String>) data;
+                                String[] array = new String[sdsdd.size()];
+                                sdsdd.toArray(array);
+                                UserDatabaseAccessor.getInstance().getUsersByID(array, new OnDataRetrieval<ArrayList<User>>() {
+                                    @Override
+                                    public void onRetrieval() {
+                                        UserDatabase.USERS = data;
+                                        UserDatabase.CURRENT_USER = UserDatabase.USERS.get(0);
+                                        System.out.println("THE FINAL VERDICT!!!!!!!!!!!!!!!!!!!!");
+                                        System.out.println(UserDatabase.USERS.get(0).toString());
+                                        System.out.println("Eyyy");
+                                        waitingDialog.dismiss();
+                                        startActivity(new Intent(MainActivity.this,Main2Activity.class));
+                                        finish();
+                                    }
+                                });
+                            }
+                        });
+
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
@@ -134,6 +157,8 @@ public class MainActivity extends AppCompatActivity {
                        Snackbar.make(rootLayout,"Failed"+e.getMessage(),Snackbar.LENGTH_SHORT).show();
                     }
                 });
+
+
 
             }
         });
@@ -173,7 +198,7 @@ public class MainActivity extends AppCompatActivity {
 
                 //Check Valid
                 if(TextUtils.isEmpty(edtEmail.getText().toString())){
-                    Snackbar.make(rootLayout,"Please enter emial address", Snackbar.LENGTH_SHORT).show();
+                    Snackbar.make(rootLayout,"Please enter email address", Snackbar.LENGTH_SHORT).show();
                     return;
                 }
 

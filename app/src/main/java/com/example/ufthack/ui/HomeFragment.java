@@ -51,15 +51,14 @@ public class HomeFragment extends Fragment {
             @Override
             public void onDayClick(EventDay eventDay) {
                 Calendar clickedDayCalendar = eventDay.getCalendar();
-                System.out.println("---------------------------------");
                 String message = "";
                 message += clickedDayCalendar.getTime().getDate() + "-";
                 message += clickedDayCalendar.getTime().getMonth() + "-";
                 message += clickedDayCalendar.getTime().getYear();
 
-                System.out.println(clickedDayCalendar.getTime().getDate());
-                System.out.println(clickedDayCalendar.getTime().getMonth());
-                System.out.println(clickedDayCalendar.getTime().getYear());
+//                System.out.println(clickedDayCalendar.getTime().getDate());
+//                System.out.println(clickedDayCalendar.getTime().getMonth());
+//                System.out.println(clickedDayCalendar.getTime().getYear());
                 Intent intent = new Intent(Main2Activity.ACTIVITY_HANDLE, VapeViewActivity.class);
                 intent.putExtra("date", message);
                 startActivity(intent);
@@ -75,14 +74,14 @@ public class HomeFragment extends Fragment {
         calendarView.setOnPreviousPageChangeListener(new OnCalendarPageChangeListener() {
             @Override
             public void onChange() {
-                System.out.println("prev");
+                // System.out.println("prev");
             }
         });
 
         calendarView.setOnForwardPageChangeListener(new OnCalendarPageChangeListener() {
             @Override
             public void onChange() {
-                System.out.println("next");
+                // System.out.println("next");
             }
         });
 

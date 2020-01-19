@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.widget.TimePicker;
 
 import com.example.ufthack.R;
+import com.example.ufthack.database.DatabaseTesting;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Main2Activity extends AppCompatActivity implements TimePickerFragment.TimePickerLister {
@@ -24,6 +25,9 @@ public class Main2Activity extends AppCompatActivity implements TimePickerFragme
         bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
         ACTIVITY_HANDLE = this;
+
+        DatabaseTesting test = new DatabaseTesting();
+        test.runTests();
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener = new BottomNavigationView.OnNavigationItemSelectedListener() {

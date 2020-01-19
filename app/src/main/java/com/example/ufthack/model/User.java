@@ -1,41 +1,130 @@
 package com.example.ufthack.model;
 
-public class User {
-	private Sex sex;
-	private String name;
-	private String username;
-	private String password;
-	private String email;
-	private String userId;
-	private int age;
-	private int streak;
-	private int max_streak = 0;
-	private Rank rank;
-	private int currNic;
-	private int nicGoal;
+import java.util.ArrayList;
 
-	/**
-	 * Constructor initializes the variables
-	 * 
-	 * @param name
-	 * @param sex
-	 * @param age
-	 * @param username
-	 * @param password
-	 * @param email
-	 * @param streak
-	 * @param rank
-	 * @param currNic
-	 * @param nicGoal
-	 */
+public class User {
+	private String email = "", password = "", phone = "";
+
+	public User(String email, String password, String name , String phone){
+		this.email = email;
+		this.password = password;
+		this.username = name;
+		this.phone = phone;
+	}
+
+	public void setName(String name){
+		this.username = name;
+	}
+
+	public String getName() {return username;}
+
+	public String getPhone(){
+		return phone;
+	}
+
+	public void setPhone(String phone){
+		this.phone = phone;
+	}
+
+	public String getPassword(){
+		return password;
+	}
+
+	public void setPassword(String password){
+		this.password = password;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public int getMax_streak() {
+		return max_streak;
+	}
+
+	private String username = "";
+	private String userId = "";
+	private int streak = 0;
+	private int max_streak = 0;
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
+	public void setStreak(int streak) {
+		this.streak = streak;
+	}
+
+	public void setMax_streak(int max_streak) {
+		this.max_streak = max_streak;
+	}
+
+	public void setNicGoal(int nicGoal) {
+		this.nicGoal = nicGoal;
+	}
+
+	private Rank rank;
+	private int currNic = 0;
+	private int nicGoal = 0;
+	private int score = 0;
+	public ArrayList<VapeEvent> events;
+
+	public User() {
+		// Default constructor required for calls to DataSnapshot.getValue(User.class)
+		username = "";
+		email = "";
+		events = new ArrayList<>();
+	}
+
+	public User(String username, String email) {
+		// Default constructor required for calls to DataSnapshot.getValue(User.class)
+		this.username = username;
+		this.email = email;
+	}
+
+	public int getScore() {
+		return score;
+	}
+
+	public void setScore(int score) {
+		this.score = score;
+	}
+
+	public void addEvent(VapeEvent event){
+		events.add(event);
+
+	}
+
+	public boolean isSetUp() {
+		return !email.equals("") && !username.equals("");
+	}
+
+	public String toString() {
+		String s = "User(" + email + " " + username;
+
+		for (VapeEvent e : events) {
+			s += "\n    " + e.toString();
+		}
+
+		s += "\n";
+		return s;
+	}
 
 	public User(String name, Sex sex, String username, String password, String email, int streak, int age, Rank rank,
 			int currNic, int nicGoal) {
-		this.sex = sex;
-		this.name = name;
-		this.age = age;
 		this.username = username;
-		this.password = password;
 		this.email = email;
 		this.streak = streak;
 		this.userId = randHex();
@@ -63,18 +152,6 @@ public class User {
 
 	public void incStreak() {
 		streak += 1;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public Sex getSex() {
-		return sex;
-	}
-
-	public int getAge() {
-		return age;
 	}
 
 	public String getUserId() {

@@ -1,79 +1,34 @@
 {
   "project_info": {
-    "project_number": "1061124304501",
-    "firebase_url": "https://hackathontest-c9303.firebaseio.com",
-    "project_id": "hackathontest-c9303",
-    "storage_bucket": "hackathontest-c9303.appspot.com"
+    "project_number": "495729222081",
+    "firebase_url": "https://uofthack-48bd0.firebaseio.com",
+    "project_id": "uofthack-48bd0",
+    "storage_bucket": "uofthack-48bd0.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1061124304501:android:732f8a458be692050bd23c",
-        "android_client_info": {
-          "package_name": "com.example.firebasetest"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "1061124304501-t2nq4hshr82rbhguo7ieip4km68ul6vg.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.firebasetest",
-            "certificate_hash": "f49da8668e4d7e094d1c79349028fc1a49b444db"
-          }
-        },
-        {
-          "client_id": "1061124304501-rhm6hd99u2clmcp57ejtitsjj6fj8v1q.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyAWJAuhQlC3DBhmEgJF8oFwQN53WaJ4eUA"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "1061124304501-rhm6hd99u2clmcp57ejtitsjj6fj8v1q.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:1061124304501:android:cbd43585df5c28eb0bd23c",
+        "mobilesdk_app_id": "1:495729222081:android:4e5a23abd6cbdf9ba64f40",
         "android_client_info": {
           "package_name": "com.example.ufthack"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1061124304501-iijnsqc5t91cki1db6i8707sp61uc23s.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.ufthack",
-            "certificate_hash": "f49da8668e4d7e094d1c79349028fc1a49b444db"
-          }
-        },
-        {
-          "client_id": "1061124304501-rhm6hd99u2clmcp57ejtitsjj6fj8v1q.apps.googleusercontent.com",
+          "client_id": "495729222081-l715j5mavqlt81k8g0eg30k0gj8kob6j.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAWJAuhQlC3DBhmEgJF8oFwQN53WaJ4eUA"
+          "current_key": "AIzaSyAfHWVZp6_sfeSd8npmA3-p9tAoQxQS_Ec"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1061124304501-rhm6hd99u2clmcp57ejtitsjj6fj8v1q.apps.googleusercontent.com",
+              "client_id": "495729222081-l715j5mavqlt81k8g0eg30k0gj8kob6j.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

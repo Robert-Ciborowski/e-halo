@@ -2,6 +2,7 @@ package com.example.ufthack.database;
 
 import androidx.annotation.NonNull;
 
+import com.example.ufthack.model.User;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -23,7 +24,7 @@ public class LeagueDatabaseAccessor {
         LeagueDatabaseAccessor = new LeagueDatabaseAccessor();
     }
 
-    public static LeagueDatabaseAccessor getReference() {
+    public static LeagueDatabaseAccessor getInstance() {
         return LeagueDatabaseAccessor;
     }
 
@@ -37,7 +38,7 @@ public class LeagueDatabaseAccessor {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String users = dataSnapshot.getValue(String.class);
-                UserDatabaseAccessor.getReference().getUsersByID(users.split(","), new OnDataRetrieval<ArrayList<User>>() {
+                UserDatabaseAccessor.getInstance().getUsersByID(users.split(","), new OnDataRetrieval<ArrayList<User>>() {
                     @Override
                     public void onRetrieval() {
                         league.append(data);

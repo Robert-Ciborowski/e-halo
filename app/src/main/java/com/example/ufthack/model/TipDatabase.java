@@ -3,11 +3,11 @@ package com.example.ufthack.model;
 import java.util.ArrayList;
 
 
-public class Database {
+public class TipDatabase {
 
 	private ArrayList<Tip> tips;
 	
-	public Database() {
+	public TipDatabase() {
 	}
 	
 	public void addTip(Tip tip) {

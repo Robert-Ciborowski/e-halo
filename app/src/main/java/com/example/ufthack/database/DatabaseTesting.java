@@ -2,6 +2,7 @@ package com.example.ufthack.database;
 
 import androidx.annotation.NonNull;
 
+import com.example.ufthack.model.User;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
@@ -9,7 +10,6 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Random;
 
 public class DatabaseTesting {
     private DatabaseReference mDatabase;
@@ -19,8 +19,8 @@ public class DatabaseTesting {
     }
 
     public void performTestOnUser(User user){
-//        DatabaseAccessor.getReference().updateUser("-LytX2fLXjpSdCF9QHJz", user);
-        // DatabaseAccessor.getReference().updateUserProperty("-LytX2fLXjpSdCF9QHJz","email", "Ur mum");
+//        DatabaseAccessor.getInstance().updateUser("-LytX2fLXjpSdCF9QHJz", user);
+        // DatabaseAccessor.getInstance().updateUserProperty("-LytX2fLXjpSdCF9QHJz","email", "Ur mum");
     }
 
     public void runTests() {
@@ -34,19 +34,19 @@ public class DatabaseTesting {
 //            writeNewUser(hex, "James" + Integer.toString(i), "james.kibi.tang" + Integer.toString(i)+"@mail.utoronto.ca");
 //            writeNewPost(hex, "James" + Integer.toString(i), "Good mOrNiNg!"+Integer.toString(i), "Kaye!"+Integer.toString(i));
 //        }
-        OnDataRetrieval<User> onData = new OnDataRetrieval<User>() {
-            @Override
-            public void onRetrieval() {
-                User user = (User) data;
-                // user.username += " Tang";
-                System.out.println(user.toString());
-                performTestOnUser(user);
-            }
-        };
+//        OnDataRetrieval<User> onData = new OnDataRetrieval<User>() {
+//            @Override
+//            public void onRetrieval() {
+//                User user = (User) data;
+//                // user.username += " Tang";
+//                System.out.println(user.toString());
+//                performTestOnUser(user);
+//            }
+//        };
+//
+//        UserDatabaseAccessor.getInstance().getUserByID("-LytX2fLXjpSdCF9QHJz", onData);
 
-        UserDatabaseAccessor.getReference().getUserByID("-LytX2fLXjpSdCF9QHJz", onData);
-
-//        LeagueDatabaseAccessor.getReference().getLeague("Bronze", new OnDataRetrieval<League>() {
+//        LeagueDatabaseAccessor.getInstance().getLeague("Bronze", new OnDataRetrieval<League>() {
 //            @Override
 //            public void onRetrieval() {
 //                System.out.println(((League) data).toString());

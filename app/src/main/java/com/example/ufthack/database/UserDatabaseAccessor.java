@@ -2,6 +2,8 @@ package com.example.ufthack.database;
 
 import androidx.annotation.NonNull;
 
+import com.example.ufthack.model.User;
+import com.example.ufthack.model.VapeEvent;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -19,7 +21,7 @@ public class UserDatabaseAccessor {
         UserDatabaseAccessor = new UserDatabaseAccessor();
     }
 
-    public static UserDatabaseAccessor getReference() {
+    public static UserDatabaseAccessor getInstance() {
         return UserDatabaseAccessor;
     }
 
@@ -37,6 +39,7 @@ public class UserDatabaseAccessor {
     public void getUserByID(String id, final OnDataRetrieval<User> onDataRetrieval) {
         userRequest = new UserRequest();
         userRequest.user = new User();
+        mDatabase.child("test").setValue("hi");
         DatabaseReference ref = mDatabase.child("users").child(id);
         DatabaseReference ref2 = ref.child("email");
         DatabaseReference ref3 = ref.child("username");
@@ -45,7 +48,7 @@ public class UserDatabaseAccessor {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String email = dataSnapshot.getValue(String.class);
-                userRequest.user.email = email;
+                userRequest.user.setEmail(email);
 
                 if (userRequest.user.isSetUp()) {
                     addEventsToUser(ref4, userRequest.user, new OnDataRetrieval<ArrayList<VapeEvent>>() {
@@ -68,8 +71,7 @@ public class UserDatabaseAccessor {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String username = dataSnapshot.getValue(String.class);
-                userRequest.user.username = username;
-                System.out.println("username set to " + username);
+                userRequest.user.setUsername(username);
 
                 if (userRequest.user.isSetUp()) {
                     addEventsToUser(ref4, userRequest.user, new OnDataRetrieval<ArrayList<VapeEvent>>() {
@@ -109,6 +111,29 @@ public class UserDatabaseAccessor {
         });
     }
 
+    public void getAllUserIDs(final OnDataRetrieval<ArrayList<String>> onDataRetrieval) {
+        DatabaseReference ref = mDatabase.child("users");
+
+        ref.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                ArrayList<String> keys = new ArrayList<>();
+
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    keys.add(snapshot.getKey());
+                }
+
+                onDataRetrieval.data = keys;
+                onDataRetrieval.onRetrieval();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                System.out.println("NOPE");
+            }
+        });
+    }
+
     public void getUsersByID(String[] id, final OnDataRetrieval<ArrayList<User>> onDataRetrieval) {
         final int size = id.length;
         final ArrayList<User> users = new ArrayList<>();
@@ -130,8 +155,8 @@ public class UserDatabaseAccessor {
 
     public void updateUser(String id, User user) {
         DatabaseReference ref = mDatabase.child("users").child(id);
-        ref.child("email").setValue(user.email);
-        ref.child("username").setValue(user.username);
+        ref.child("email").setValue(user.getEmail());
+        ref.child("username").setValue(user.getUsername());
         for (int i=0; i < user.events.size(); i++){
             ref.child("vape_events").setValue(user.events.get(i));
         }
