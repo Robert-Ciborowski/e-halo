@@ -81,6 +81,21 @@ public class User {
 	private int score = 0;
 	public ArrayList<VapeEvent> events;
 
+	public ArrayList<VapeEvent> getEventsByDate(int day, int month, int year) {
+		ArrayList<VapeEvent> e = new ArrayList<>();
+
+		for (VapeEvent e2 : events) {
+			System.out.println("A: " + e2.toString());
+			String[] s = e2.getTime().split("-");
+			if (Integer.parseInt(s[2]) == day && Integer.parseInt(s[3]) == month && Integer.parseInt(s[4]) == year) {
+				e.add(e2);
+			} else {
+			}
+		}
+
+		return e;
+	}
+
 	public User() {
 		// Default constructor required for calls to DataSnapshot.getValue(User.class)
 		username = "";

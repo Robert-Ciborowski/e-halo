@@ -17,6 +17,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 
 import com.example.ufthack.R;
+import com.example.ufthack.model.UserDatabase;
+import com.example.ufthack.model.VapeEvent;
 
 import java.util.ArrayList;
 
@@ -57,7 +59,11 @@ public class AddFragment extends Fragment implements TimePickerFragment.TimePick
             public void onClick(View view) {
                 amount = text.getText().toString();
                 VapeTime vapeTime = new VapeTime(amount,Hour,Minutes);
-                VAPE_TIMES.add(vapeTime);
+                // VAPE_TIMES.add(vapeTime);
+                Double d = Double.parseDouble(amount);
+
+                String time = Hour + "-" + Minutes + "-" + "19-01-2020";
+                UserDatabase.CURRENT_USER.addEvent(new VapeEvent(time, d, 1));
             }
         });
 

@@ -19,7 +19,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="L O G O"
+            android:text="E - H A L O"
             android:textAlignment="center"
             android:textColor="@android:color/white"
             android:textSize="36sp" />
@@ -27,7 +27,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="SOME TEXT"
+            android:text="Smoke Free"
             android:layout_marginTop="20dp"
             android:textAlignment="center"
             android:textColor="@android:color/white"

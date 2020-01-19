@@ -20,6 +20,8 @@ import java.util.Calendar;
 import java.util.Date;
 
 import com.example.ufthack.R;
+import com.example.ufthack.model.UserDatabase;
+import com.example.ufthack.model.VapeEvent;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,11 +35,16 @@ public class HomeFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_home, container, false);
 
         List<EventDay> events = new ArrayList<>();
+
+        for (VapeEvent e : UserDatabase.CURRENT_USER.events) {
+            String[] array = e.getTime().split("-");
+            Calendar calendar = Calendar.getInstance();
+            calendar.set(Integer.parseInt(array[4]), Integer.parseInt(array[3]) - 1, Integer.parseInt(array[2]));
+            events.add(new EventDay(calendar, R.drawable.smoke));
+        }
+
         Calendar calendar = Calendar.getInstance();
-        calendar.set(2020, 1, 2);
-        events.add(new EventDay(calendar, R.drawable.smoke));
-        calendar.set(2020, 1, 2);
-        events.add(new EventDay(calendar, R.drawable.smoke));
+        calendar.set(2020, 0, 19);
 
         CalendarView calendarView = (CalendarView) view.findViewById(R.id.calendarView);
         try {

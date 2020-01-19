@@ -28,11 +28,11 @@ public class NotificationsFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         lstContact = new ArrayList<>();
-        lstContact.add(new Contact("Person 1","222 XP", R.drawable.face,"1","2"));
-        lstContact.add(new Contact("Person 2","222 XP",R.drawable.face,"2","12"));
-        lstContact.add(new Contact("Person 3","222 XP",R.drawable.face,"3","4"));
-        lstContact.add(new Contact("Person 4","222 XP",R.drawable.face,"4","3"));
-        lstContact.add(new Contact("Person 5","222 XP",R.drawable.face,"5","5"));
+        lstContact.add(new Contact("James","222 XP", R.drawable.face,"1","2"));
+        lstContact.add(new Contact("Tom ","212 XP",R.drawable.face,"2","12"));
+        lstContact.add(new Contact("Parth","172 XP",R.drawable.face,"3","4"));
+        lstContact.add(new Contact("Rob","122 XP",R.drawable.face,"4","3"));
+        lstContact.add(new Contact("Ryan","100 XP",R.drawable.face,"5","5"));
 
     }
 
