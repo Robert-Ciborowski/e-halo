@@ -1,4 +1,4 @@
-package com.example.ufthack;
+package com.example.ufthack.ui;
 
 public class User {
     private String email,password,name,phone;

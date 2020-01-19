@@ -1,4 +1,4 @@
-package com.example.ufthack;
+package com.example.ufthack.ui;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -11,6 +11,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.ufthack.R;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -9,10 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".VapeViewActivity"></activity>
-        <activity android:name=".Main2Activity" />
-        <activity android:name=".Welcome" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.VapeViewActivity"></activity>
+        <activity android:name=".ui.Main2Activity" />
+        <activity android:name=".ui.Welcome" />
+        <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,4 +1,4 @@
-package com.example.ufthack;
+package com.example.ufthack.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,17 +19,9 @@ import com.applandeo.materialcalendarview.listeners.OnDayClickListener;
 import java.util.Calendar;
 import java.util.Date;
 
-import android.os.Bundle;
-
-import com.applandeo.materialcalendarview.CalendarView;
-import com.applandeo.materialcalendarview.EventDay;
-import com.applandeo.materialcalendarview.exceptions.OutOfDateRangeException;
-import com.applandeo.materialcalendarview.listeners.OnCalendarPageChangeListener;
-import com.applandeo.materialcalendarview.listeners.OnDayClickListener;
+import com.example.ufthack.R;
 
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 public class HomeFragment extends Fragment {

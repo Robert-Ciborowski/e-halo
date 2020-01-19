@@ -1,4 +1,4 @@
-package com.example.ufthack;
+package com.example.ufthack.ui;
 
 
 import android.os.Bundle;
@@ -9,6 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.example.ufthack.R;
 
 /**
  * A simple {@link Fragment} subclass.

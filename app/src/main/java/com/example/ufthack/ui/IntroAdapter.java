@@ -1,6 +1,5 @@
-package com.example.ufthack;
+package com.example.ufthack.ui;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;

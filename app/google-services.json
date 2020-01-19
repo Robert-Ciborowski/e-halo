@@ -1,42 +1,79 @@
 {
   "project_info": {
-    "project_number": "1040017277616",
-    "firebase_url": "https://ufthack-6a1f6.firebaseio.com",
-    "project_id": "ufthack-6a1f6",
-    "storage_bucket": "ufthack-6a1f6.appspot.com"
+    "project_number": "1061124304501",
+    "firebase_url": "https://hackathontest-c9303.firebaseio.com",
+    "project_id": "hackathontest-c9303",
+    "storage_bucket": "hackathontest-c9303.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1040017277616:android:82cc6ee219fe63b51f3175",
+        "mobilesdk_app_id": "1:1061124304501:android:732f8a458be692050bd23c",
         "android_client_info": {
-          "package_name": "com.example.ufthack"
+          "package_name": "com.example.firebasetest"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1040017277616-r3vs42j3kcmh1dmccs81grjnqt0hg3rc.apps.googleusercontent.com",
+          "client_id": "1061124304501-t2nq4hshr82rbhguo7ieip4km68ul6vg.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.ufthack",
-            "certificate_hash": "90b3fbaf0a073b5d37fa4f610169e1499b61c7f1"
+            "package_name": "com.example.firebasetest",
+            "certificate_hash": "f49da8668e4d7e094d1c79349028fc1a49b444db"
           }
         },
         {
-          "client_id": "1040017277616-numklrkrdqll0kekotg4p76637o7rktl.apps.googleusercontent.com",
+          "client_id": "1061124304501-rhm6hd99u2clmcp57ejtitsjj6fj8v1q.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDhQdIIHfqukDffk5UUQvTg14jxwuEK9f8"
+          "current_key": "AIzaSyAWJAuhQlC3DBhmEgJF8oFwQN53WaJ4eUA"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1040017277616-numklrkrdqll0kekotg4p76637o7rktl.apps.googleusercontent.com",
+              "client_id": "1061124304501-rhm6hd99u2clmcp57ejtitsjj6fj8v1q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1061124304501:android:cbd43585df5c28eb0bd23c",
+        "android_client_info": {
+          "package_name": "com.example.ufthack"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1061124304501-iijnsqc5t91cki1db6i8707sp61uc23s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ufthack",
+            "certificate_hash": "f49da8668e4d7e094d1c79349028fc1a49b444db"
+          }
+        },
+        {
+          "client_id": "1061124304501-rhm6hd99u2clmcp57ejtitsjj6fj8v1q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWJAuhQlC3DBhmEgJF8oFwQN53WaJ4eUA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1061124304501-rhm6hd99u2clmcp57ejtitsjj6fj8v1q.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

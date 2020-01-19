@@ -1,4 +1,4 @@
-package com.example.ufthack;
+package com.example.ufthack.ui;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,6 +10,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.ufthack.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +28,7 @@ public class NotificationsFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         lstContact = new ArrayList<>();
-        lstContact.add(new Contact("Person 1","222 XP",R.drawable.face,"1","2"));
+        lstContact.add(new Contact("Person 1","222 XP", R.drawable.face,"1","2"));
         lstContact.add(new Contact("Person 2","222 XP",R.drawable.face,"2","12"));
         lstContact.add(new Contact("Person 3","222 XP",R.drawable.face,"3","4"));
         lstContact.add(new Contact("Person 4","222 XP",R.drawable.face,"4","3"));

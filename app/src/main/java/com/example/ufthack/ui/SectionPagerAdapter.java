@@ -1,4 +1,4 @@
-package com.example.ufthack;
+package com.example.ufthack.ui;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;

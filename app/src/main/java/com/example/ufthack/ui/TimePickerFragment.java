@@ -1,4 +1,4 @@
-package com.example.ufthack;
+package com.example.ufthack.ui;
 
 import android.app.Dialog;
 import android.app.TimePickerDialog;
