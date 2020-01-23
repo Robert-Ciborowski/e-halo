@@ -34,3 +34,4 @@ Using positive words and helpful tips, users are encouraged to stop vaping for t
 
 ## Backend Developers
 - Robert Ciborowski
+- Derek Wang
